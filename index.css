@@ -1,0 +1,633 @@
+/* Plus Jakarta Sans */
+/* font-family: "Plus Jakarta Sans", sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+
+    /* ### Primary */
+
+    --Lime: hsl(61, 70%, 52%);
+    --Red: hsl(4, 69%, 50%);
+
+    /* ### Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Slate-100: hsl(202, 86%, 94%);
+    --Slate-300: hsl(203, 41%, 72%);
+    --Slate-500: hsl(200, 26%, 54%);
+    --Slate-700: hsl(200, 24%, 40%);
+    --Slate-900: hsl(202, 55%, 16%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Slate-100);
+}
+
+.main-card {
+    background-color: var(--White);
+    display: flex;
+    width: 53%;
+    border-radius: 20px;
+}
+
+.calc {
+    background-color: var(--White);
+    flex-direction: column;
+    display: flex;
+    padding: 30px;
+    width: 50%;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.form-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.form-head>h1 {
+    color: var(--Slate-900);
+    font-size: 19px;
+}
+
+.form-head>p {
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--Slate-500);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.form-head>p:hover {
+    color: var(--Slate-900);
+}
+
+#mortgager {
+    display: flex;
+    flex-direction: column;
+}
+
+.laby {
+    color: var(--Slate-700);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.input-m {
+    display: flex;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* toggle this */
+
+.amount-error {
+    display: none;
+    font-size: 11px;
+    margin-bottom: 10px;
+    color: var(--Red);
+    font-weight: 500;
+}
+
+/* ---------- */
+
+.input-text-m {
+    position: absolute;
+    background-color: var(--Slate-100);
+    left: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8.3px 11.8px 8.3px;
+    font-weight: 700;
+    z-index: 1;
+    color: var(--Slate-700);
+    border-radius: 5px 0 0 5px;
+    font-size: 13px;
+}
+
+.input-m>input {
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    padding: 7px 10px 7px 45px;
+    color: var(--Slate-900);
+    font-size: 1rem;
+    font-weight: 700;
+    border: 1px solid var(--Slate-500);
+    border-radius: 5px;
+}
+
+.input-m>input:hover {
+    border: 1px solid var(--Slate-900);
+}
+
+
+.input-m>input:focus {
+    border: 1px solid var(--Lime);
+}
+
+/* Allows me to target other elements when i use :focus-within */
+.input-m:focus-within .input-text-m {
+    background-color: var(--Lime);
+}
+
+.term-rate {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 10px 0;
+}
+
+.term-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.term-section>label {
+    color: var(--Slate-700);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.input-term {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-term>input {
+    width: 40%;
+    cursor: pointer;
+    outline: none;
+    padding: 10px 80px 10px 10px;
+    border: 1px solid var(--Slate-500);
+    color: var(--Slate-900);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.input-term>input:hover {
+    border: 1px solid var(--Slate-900);
+}
+
+.input-term>span {
+    position: absolute;
+    background-color: var(--Slate-100);
+    color: var(--Slate-700);
+    font-weight: 700;
+    right: 11px;
+    padding: 11.4px;
+    border-radius: 0 5px 5px 0;
+    font-size: 13px;
+}
+
+.interest-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.interest-section>label {
+    color: var(--Slate-700);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.input-interest {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.input-interest>input {
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    padding: 10px 50px 10px 10px;
+    border: 1px solid var(--Slate-500);
+    color: var(--Slate-900);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.input-interest>input:hover {
+    border: 1px solid var(--Slate-900);
+}
+
+.input-interest>span {
+    position: absolute;
+    background-color: var(--Slate-100);
+    color: var(--Slate-700);
+    font-weight: 700;
+    right: 1px;
+    padding: 11.5px;
+    border-radius: 0 5px 5px 0;
+    font-size: 13px;
+}
+
+.error-container {
+    display: flex;
+    width: 100%;
+    gap: 68px;
+}
+
+/* I dont have to toggle container, just the <p> tags on conditioner */
+.error-term {
+    display: none;
+    font-size: 11px;
+    margin-bottom: 10px;
+    color: var(--Red);
+    font-weight: 500;
+}
+
+.error-rate {
+    display: none;
+    font-size: 11px;
+    margin-bottom: 10px;
+    color: var(--Red);
+    font-weight: 500;
+}
+
+/* ------------------------- */
+
+.radio-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0 25px 0;
+}
+
+.radio-selection>label {
+    color: var(--Slate-700);
+    font-weight: 500;
+    font-size: 13px;
+}
+
+/* Will have to change the display on this error message as well */
+
+.error-radio {
+    display: none;
+    font-size: 11px;
+    margin-bottom: 10px;
+    color: var(--Red);
+    font-weight: 500;
+}
+
+.repayer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--Slate-500);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.repayer:hover {
+    border: 1px solid var(--Lime);
+}
+
+/* This code here modifies the circle that will be utilized for input type radio */
+.repayer>input[type="radio"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--Slate-700);
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+
+.repayer>input[type="radio"]:checked {
+    border: 1px solid var(--Lime);
+}
+
+/* This puts the inner circle inside of the radio button input */
+.repayer>input[type="radio"]::after {
+    display: none;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--Lime);
+    position: relative;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Show the inner circle when checked */
+.repayer>input[type="radio"]:checked::after {
+    display: block;
+}
+
+/* Changes the div if the input is checked (:has) */
+.repayer:has(input[type="radio"]:checked) {
+    background-color: hsl(61, 70%, 90%);
+    border: 1px solid var(--Lime);
+}
+
+.repayer>label {
+    color: var(--Slate-900);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.interest {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--Slate-500);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.interest:hover {
+    border: 1px solid var(--Lime);
+}
+
+.interest>input[type="radio"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--Slate-700);
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+
+.interest>input[type="radio"]:checked {
+    border: 1px solid var(--Lime);
+}
+
+.interest>input[type="radio"]::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--Lime);
+    position: relative;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+
+.interest>input[type="radio"]:checked::after {
+    display: block;
+}
+
+.interest:has(input[type="radio"]:checked) {
+    background-color: hsl(61, 70%, 90%);
+    border: 1px solid var(--Lime);
+}
+
+.interest>label {
+    color: var(--Slate-900);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.submitter {
+    background-color: var(--Lime);
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 75%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--Slate-900);
+    font-weight: 700;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.submitter:hover {
+    background-color: hsl(61, 70%, 70%);
+}
+
+
+
+
+/* The right side of the main card.  */
+
+.results {
+    width: 50%;
+    background-color: var(--Slate-900);
+    border-radius: 0px 20px 20px 50px;
+}
+
+/* will have to toggle this */
+
+.potential-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 23px;
+    height: 90%;
+}
+
+.potential-results>img {
+    width: 43%;
+    margin-bottom: 10px;
+}
+
+.potential-results>h2 {
+    color: var(--White);
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    letter-spacing: .02rem;
+}
+
+.potential-results>p {
+    color: var(--Slate-500);
+    font-weight: 500;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.1rem;
+}
+
+.result-container {
+    /* switch to none on condition */
+    display: none;
+    flex-direction: column;
+    padding: 32px;
+}
+
+.result-container>h2 {
+    color: var(--White);
+    font-size: 18.3px;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+.result-container>p {
+    color: var(--Slate-500);
+    font-size: 12.1px;
+    font-weight: 500;
+    line-height: 1.1rem;
+    margin-bottom: 32px;
+}
+
+.the-results {
+    background-color: hsl(202, 55%, 12%);
+    border-radius: 5px;
+    border-top: 3px solid var(--Lime);
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+}
+
+.the-results>h5:nth-of-type(1) {
+    color: var(--Slate-500);
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.month-plan {
+    color: var(--Lime);
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-bottom: 27px;
+}
+
+.the-results>hr {
+    border: none;
+    border-top: 1px solid hsl(202, 55%, 23%);
+    margin-bottom: 25px;
+}
+
+.the-results>h5:nth-of-type(2) {
+    color: var(--Slate-500);
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.over-term {
+    color: var(--White);
+    font-weight: 700;
+    font-size: 1.13rem;
+}
+
+/* This will be the classes for the errors */
+
+/* -------------------------------------------------- */
+
+/* error handling for the input fields */
+.input-m>input.error-input {
+    border: 1px solid var(--Red);
+}
+
+.input-m>.input-text-m.error-span {
+    background-color: var(--Red);
+    color: var(--White);
+}
+
+.input-term>input.error-input {
+    border: 1px solid var(--Red);
+}
+
+.input-term>.input-year.error-span {
+    background-color: var(--Red);
+    color: var(--White);
+}
+
+
+.input-interest>input.error-input {
+    border: 1px solid var(--Red);
+}
+
+.input-interest>.input-percent.error-span {
+    background-color: var(--Red);
+    color: var(--White);
+}
+
+/* -------------------------------------------------- */
+
+
+/* Media Query Now */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        background-color: var(--Slate-900);
+    }
+
+    .main-card {
+        width: 100%;
+        flex-direction: column;
+        height: 100vh;
+        background-color: var(--Slate-900);
+    }
+
+    .calc {
+        width: 100%;
+        padding: 20px;
+        border-radius: 0;
+    }
+
+    .form-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .term-rate {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .input-term>input {
+        width: 100%;
+    }
+
+    .input-term>span {
+        right: 1px;
+
+    }
+
+    .error-container {
+        gap: 185px;
+    }
+
+
+    .submitter {
+        width: 100%;
+    }
+
+
+    .results {
+        width: 100%;
+        border-radius: 0;
+    }
+
+
+
+}
